@@ -1,5 +1,4 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,41 +7,121 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Web_Watch_Shop.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/swiper.min.css" asp-append-version="true" />
 </head>
 <body>
+    <!-- Go to top button -->
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+
+    <!-- Header -->
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Web_Watch_Shop</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+        <div class="logo">
+            <a asp-page="/Index"><img src="~/images/Website-Logo/logo.png" alt="logo"></a>
+        </div>
+        <div class="icons">
+            <div class="search-box">
+                <form action="">
+                    <input type="search" name="" id="input" placeholder="Search Here...">
+                    <input type="submit" name="" id="search" value="Search">
+                </form>
             </div>
-        </nav>
+        </div>
     </header>
+
+    <!-- Header -->
+    <!-- Navbars -->
+
+
+
+    <nav class="nav-sec">
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" for="icon" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+        </label>
+        <div class="nav">
+            <div class="navbars">
+                <li>
+                    <a asp-page="/Index">Home</a>
+                </li>
+                <li>
+                    <a asp-page="/Shop/Index">Shop</a>
+                </li>
+                <li>
+                    <a asp-page="/About/Index">About</a>
+                </li>
+                <li>
+                    <a asp-page="/Admin/Index">Admin</a>
+                </li>
+            </div>
+            <input type="checkbox" id="more" class="hidden">
+            <label for="more" class="more">
+                <p class="text-white">More <i class="fa fa-angle-down mt-3 display-4"></i></p>
+            </label>
+            <div class="icon2">
+                <a asp-page="/Login/Index">Login<i class="fa fa-user-o"></i></a>
+@*              <partial name="_LoginPartial" /> *@
+                <a asp-page="/Cart/Index">
+                    My-Cart
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>2</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    <!-- FOOTER -->
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Web_Watch_Shop - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="footer">
+        <div class="footer-row">
+            <div class="footer-col-1">
+                <div class="f-logo">
+                    <a href="index.html"><img src="~/images/Website-Logo/logo2.png" alt="One-shop"></a>
+                </div>
+                <p>mechanical watches still attracts interest from part of the watch-buying public, especially among the watch collectors.</p>
+                <ul class="footer-social">
+                    <li><a class="a" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="a" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="a" href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a class="a" href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a class="a" href="#"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <h3 class="footer-headings">Navigation</h3>
+                <ul class="footer-links">
+                    <li><a class="a" asp-page="/shop/index">shop</a></li>
+                    <li><a class="a" asp-page="/Contact/index">Contact</a></li>
+                    <li><a class="a" asp-page="/login/index">Signup</a></li>
+                    <li><a class="a" asp-page="/About/index">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-3">
+                <h3 class="footer-header">Stay Connected</h3>
+                <p>Get E-mail updates about our latest shop and special offers.</p>
+                <form>
+                    <div class="form-group">
+                        <input class="input" placeholder="Enter Email Address">
+                    </div>
+                    <button class="f-btn">Join Newslatter</button>
+                </form>
+            </div>
         </div>
     </footer>
+    <div class="copyrights">
+        <span>Copyright &copy;2020. One-Shop-All rights reserved</span>
+    </div>
+
+    <!-- /FOOTER -->
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
