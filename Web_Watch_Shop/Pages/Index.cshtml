@@ -4,7 +4,258 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/swiper.min.css" asp-append-version="true" />
+<!-- Slider -->
+<section class="swiper-container swiper-container1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="~/images/banner-images/banner11.jpg" alt="slide-image-1">
+            <h5>Select Your New Perfect Style</h5>
+            <a asp-page="/shop/index" class="btn btn-info">SHOP NOW</a>
+        </div>
+        <div class="swiper-slide">
+            <img src="~/images/banner-images/banner4.jpg" alt="slide-image-2">
+            <h5>Discover the best watch Online with us</h5>
+            <a asp-page="/shop/index" class="btn btn-info">SHOP NOW</a>
+        </div>
+        <div class="swiper-slide">
+            <img src="~/images/banner-images/banner7.jpg" alt="slide-image-3">
+            <h5>Welcome to One-Shop</h5>
+            <a asp-page="/shop/index" class="btn btn-info">SHOP NOW</a>
+        </div>
+        <div class="swiper-slide">
+            <img src="~/images/banner-images/banner8.jpg" alt="slide-image-4">
+            <h5>Brand New Watches</h5>
+            <a asp-page="/shop/index" class="btn btn-info">SHOP NOW</a>
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</section>
+<!-- Slider -->
+<!-- Benefit -->
+
+<div class="benefit">
+
+    <div class="benefit-row">
+        <div class="benefit-col">
+            <div class="benefit-icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+            <div class="benefit-content">
+                <h6>free shipping</h6>
+                <p>Suffered Alteration in Some Form</p>
+            </div>
+        </div>
+        <div class="benefit-col">
+            <div class="benefit-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+            <div class="benefit-content">
+                <h6>cach on delivery</h6>
+                <p>The Internet Tend To Repeat</p>
+            </div>
+        </div>
+        <div class="benefit-col">
+            <div class="benefit-icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+            <div class="benefit-content">
+                <h6>45 days return</h6>
+                <p>Making it Look Like Readable</p>
+            </div>
+        </div>
+        <div class="benefit-col">
+            <div class="benefit-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+            <div class="benefit-content">
+                <h6>opening all week</h6>
+                <p>8AM - 09PM</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Benefit -->
+<!-- Deal of the week -->
+<section class="deal">
+    <div class="deal-container">
+        <div class="deal-row">
+            <div class="deal-col-1">
+                <div class="img">
+                    <img src="~/images/product-images/deal.png" alt="Deals of the month">
+                </div>
+            </div>
+            <div class="deal-col-2">
+                <h2 class="h2">
+                    Deal Of The Month
+                </h2>
+                <div class="counter">
+                    <li class="round"><span id="days"></span>Days</li>
+                    <li class="round"><span id="hours"></span>Hours</li>
+                    <li class="round"><span id="mins"></span>Mins</li>
+                    <li class="round"><span id="sec"></span>Sec</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- brand slider -->
+<div class="mainsec ">
+
+    <section class="mt-5 mb-5 brands bg-light">
+        <div class="container  text-center ">
+            <div class="row  m-0">
+                <div class="col-md-3 col-sm-6 p-2"><img src="~/images/product-images/brands.png" width="100px" alt="Rolex"></div>
+                <div class="col-md-3 col-sm-6 p-2"><img src="~/images/product-images/brand6.png" width="100px" alt="Mont-Black"></div>
+                <div class="col-md-3 col-sm-6 mt-3 p-2"><img src="~/images/product-images/brand3.png" width="100px" alt="Tudor"></div>
+                <div class="col-md-3 col-sm-6 mt-5 p-2"><img src="~/images/product-images/brand1.png" width="100px" alt="Fortis"></div>
+            </div>
+        </div>
+    </section>
+    <!-- brand slider -->
+    <!-- New-Arrivals -->
+
+    <section class="text-center pb-5">
+        <h2 class="h22">NEW ARRIVALS</h2>
+        <div class="wrappers image-filter mobile">
+            @*  @foreach (var item in Model.Product)
+            {
+            <div class="cardd">
+            <a href="/product?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.Description)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
+            <img src="@item.ImagePath" alt="@item.Description">
+            <p>
+            @item.Name
+            <br> <span class="text-danger">$ @item.Price</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div>
+            } *@
+            @* <div class="cardd">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/popular2.jpg")&description=@HttpUtility.UrlEncode("Browwn Leather Skeleton Watch for Men.")&price=@HttpUtility.UrlEncode("$ 450")">
+            <img src="~/images/product-images/popular2.jpg" alt="Browwn Leather Skeleton Watch for Men.">
+            <p>
+            Browwn Leather Skeleton Watch for Men.
+            <br> <span class="text-danger">$ 450</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div>
+            <div class="cardd">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/popular3.png")&description=@HttpUtility.UrlEncode("Timex Allied Blue Analog Watch for Men")&price=@HttpUtility.UrlEncode("$ 850")">
+            <img src="~/images/product-images/popular3.png" alt="Timex Allied Blue Dial Analog">
+            <p>
+            Timex Allied Blue Analog Watch for Men
+            <br> <span class="text-danger">$ 850</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div>
+
+            <div class="cardd">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/popular4.png")&description=@HttpUtility.UrlEncode("Romanson Stainless Steel Wrist Watch For Men-Romanson")&price=@HttpUtility.UrlEncode("$ 1,250")">
+            <img src="~/images/product-images/popular4.png" alt="Romanson Stainless Steel Wrist Watch">
+            <p>
+            Romanson Stainless Steel Wrist Watch For Men-Romanson
+            <br><span class="text-danger">$ 1,250</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div>
+
+            <div class="cardd">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/popular5.png")&description=@HttpUtility.UrlEncode("Luxury Brand Men Watch Good Quality Black")&price=@HttpUtility.UrlEncode("$ 300")">
+            <img src="~/images/product-images/popular5.png" alt="Luxury Brand Watch">
+            <p>
+            Luxury Brand Men Watch Good Quality Black
+            <br> <span class="text-danger">$ 300</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div>
+
+            <div class="cardd">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/popular6.png")&description=@HttpUtility.UrlEncode("NAVIFORCE Army Business Band Japan Watch")&price=@HttpUtility.UrlEncode("$ 250")">
+            <img src="~/images/product-images/popular6.png" alt="NAVIFORCE ArmyZinger">
+            <p>
+            NAVIFORCE Army Business Band Japan Watch
+            <br> <span class="text-danger">$ 250</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div>
+
+            <div class="cardd">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/women1.png")&description=@HttpUtility.UrlEncode("Blue Leather Watch for Women.")&price=@HttpUtility.UrlEncode("$ 350")">
+            <img src="~/images/product-images/women1.png" alt="Blue Leather Skeleton Watch for Women.">
+            <p>
+            Blue Leather Watch for Women.
+            <br> <span class="text-danger">$ 350</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div>
+
+            <div class="cardd">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/women2.png")&description=@HttpUtility.UrlEncode("New Pink lether Fashion Mobile Watch For Girls")&price=@HttpUtility.UrlEncode("$ 250")">
+            <img src="~/images/product-images/women2.png" alt="New Fashion Mobile Watch For Girls">
+            <p>
+            New Pink lether Fashion Mobile Watch For Girls
+            <br> <span class="text-danger">$ 250</span>
+            </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <button class="btn2">ADD TO CART</button>
+            </div> *@
+
+        </div>
+        <a asp-page="/Shop/Index" class="vi-btn">VIEW ALL</a>
+    </section>
+
+</div>
+<script src="~/js/swiper.js"></script>
+<script src="~/js/app.js"></script>
+<script src="~/js/app1.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    // time counter
+
+    var countDownDate = new Date("jun 30, 2021 24:00:00").getTime();
+
+    var x = setInterval(function () {
+
+
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("mins").innerHTML = minutes;
+        document.getElementById("sec").innerHTML = seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("days").innerHTML = "EXPIRED";
+            document.getElementById("days").style.fontSize = "12px";
+            document.getElementById("hours").innerHTML = "EXPIRED";
+            document.getElementById("hours").style.fontSize = "12px";
+            document.getElementById("mins").innerHTML = "EXPIRED";
+            document.getElementById("mins").style.fontSize = "12px";
+            document.getElementById("sec").innerHTML = "EXPIRED";
+            document.getElementById("sec").style.fontSize = "12px";
+
+        }
+    }, 1000);
+</script>

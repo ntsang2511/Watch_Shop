@@ -1,0 +1,65 @@
+﻿@page
+@model Web_Watch_Shop.Pages.Product_Details.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<section>
+    <div class="banner banner4">
+        <h2 class="page-name"></h2>
+    </div>
+    <br>
+<p>
+    <a class="btn btn-primary text-white" asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Detail[0].ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Detail[0].ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Detail[0].CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Detail[0].ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Detail[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Product_Detail) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                <img src="@item.ImagePath" alt="Product Image" style="max-width: 50px;" />
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                        <a class="btn btn-primary text-white" asp-page="./Edit" asp-route-id="@item.Product_DetailID">Edit</a> |
+                        <a class="btn btn-primary text-white" asp-page="./Details" asp-route-id="@item.Product_DetailID">Details</a> |
+                        <a class="btn btn-primary text-white" asp-page="./Delete" asp-route-id="@item.Product_DetailID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

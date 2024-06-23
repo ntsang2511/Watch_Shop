@@ -5,7 +5,6 @@ namespace Web_Watch_Shop.Models
     public class Cart_Detail
     {
         public int Cart_DetailID {  get; set; }
-        [ForeignKey("CartID")]
         public int CartID { get; set; }
         public Cart Cart { get; set; }
 

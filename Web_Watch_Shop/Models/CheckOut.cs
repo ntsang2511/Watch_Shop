@@ -12,7 +12,6 @@ namespace Web_Watch_Shop.Models
         public string Sex { get; set; }
         public string Email { get; set; }
         public string DeliveryMethod { get; set; }
-        [ForeignKey("Order_DetailID")]
         public int Order_DetailID { get; set; }
         public Order_Detail Order_Detail { get; set; }
 

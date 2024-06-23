@@ -1,0 +1,95 @@
+﻿@page
+@model Web_Watch_Shop.Pages.CheckOutPage.IndexModel
+@{
+}
+
+<!-- Navbars -->
+
+<section>
+    <div class="banner banner5">
+        <h2 class="page-name">Check-out</h2>
+    </div>
+    <br>
+</section>
+<!-- BANNER -->
+
+<div class="go-back"><a class="btn btn-primary text-white" asp-page="/Cart/Index">Go-Back</a></div>  @* <i class="fa fa-angle-left"></i> *@
+
+<div class="container p-3 ">
+    <form action="" class="bg-light row m-0 pb-3 ">
+
+        <div class="form-group col-md-6">
+            <label for="firstname">First Name*</label>
+            <input type="text1" placeholder="Ex:Trần Trung" required class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="last-name">Last Name*</label>
+            <input type="text2" placeholder="Ex:Hậu" class="form-control">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="">Email address:</label>
+            <input type="email" placeholder="Ex:hautt21@gmail.com" required class="form-control">
+
+        </div>
+        <div class="form-group col-md-12">
+            <label for="address">Address:</label>
+            <textarea class="form-control" placeholder="Ex:123-Bình Thạnh-HCM
+" required rows="3"></textarea>
+        </div>
+        <div class="form-group col-md-12">
+            <label>Province:</label>
+            <select class="form-control" required id="exampleFormControlSelect1">
+                <option disabled selected hidden>select</option>
+                <option>Hồ Chí Minh</option>
+                <option>Hà Nội</option>
+                <option>Đà Nẵng</option>
+                <option>Bình Thuận</option>
+                <option>Cao Bằng</option>
+                <option>Thanh Hóa</option>
+                <option>Other..</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" placeholder="Ex:10000" required class="form-control">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="PhoneNo">Phone No:</label>
+            <input type="number" placeholder="Ex:0134567xxx" required class="form-control">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="" id="Delivery">Choose Delivery Method:</label>
+        </div>
+
+        <div class="form-check col-md-12">
+            <input type="radio" required name="exampleRadios" value="COD">
+            <label for="Delivery">Cash on Delivery</label>
+        </div>
+        <div class="form-check col-md-12">
+            <input type="radio" required name="exampleRadios" value="next-day">
+            <label for="Delivery">Next Day Delivery</label>
+        </div>
+
+        <div class="form-check col-md-12">
+            <input class="" type="radio" required name="exampleRadios" value="Free">
+            <label class="" for="Delivery">Personal Pickup (Free)</label>
+        </div>
+
+
+        <div class="form-group col-md-12 mt-5">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck" required>
+                    Agree to terms and conditions
+                </label>
+            </div>
+        </div>
+        <div class="col-md-12 text-center mt-5">
+            <button type="submit" value="sumbit" class="btn btn-primary w-100">Place Order</button>
+        </div>
+
+    </form>
+
+
+</div>
+

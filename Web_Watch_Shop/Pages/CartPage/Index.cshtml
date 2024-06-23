@@ -1,0 +1,95 @@
+﻿@page
+@model Web_Watch_Shop.Pages.CartPage.IndexModel
+@{
+}
+
+<!-- BANNER -->
+
+<section>
+    <div class="banner banner4">
+        <h2 class="page-name">My-Cart</h2>
+    </div>
+</section>
+<!-- BANNER -->
+<!-- bread cumb -->
+
+<div class="container mt-2 ">
+    <div class="row">
+        <div class="col-md-12 mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-page="/Index">Home</a></li>
+                    <li class="breadcrumb-item active">Cart</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- bread cumb -->
+<!-- Cart-items -->
+<section>
+    <div class="cart-container">
+        <div class="cart-row">
+            <div class="cart-names">
+                <div class="product-heading">
+                    <h2>Product</h2>
+                </div>
+                <div class="product-sub-head">
+                    <li>Color</li>
+                    <li>Price</li>
+                    <li>Quantity</li>
+                    <li>Total</li>
+                </div>
+            </div>
+            <div class="item-details">
+                <div class="product-img">
+                    <a><img src="@ViewData["Image"]" alt="product"></a>
+                </div>
+                <div class="product-quntity">
+                    <li>Silver</li>
+                    <li>$ 1,250</li>
+                    <li>
+                        <button class="pp">-</button>
+                        <input type="number" value="1" />
+                        <button class="pm">+</button>
+                    </li>
+                    <li>@ViewData["Price"]</li>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-row">
+            <div class="cart-names">
+                <div class="product-heading">
+                    <h2>Product</h2>
+                </div>
+                <div class="product-sub-head">
+                    <li>Color</li>
+                    <li>Price</li>
+                    <li>Quantity</li>
+                    <li>Total</li>
+                </div>
+            </div>
+            <div class="item-details">
+                <div class="product-img">
+                    <a><img src="~/images/product-images/popular2.jpg" alt="product"></a>
+                </div>
+                <div class="product-quntity">
+                    <li>Brown</li>
+                    <li>$ 450</li>
+                    <li>
+                        <button class="pp">-</button>
+                        <input type="number" value="1" />
+                        <button class="pm">+</button>
+                    </li>
+                    <li>$ 450</li>
+                </div>
+            </div>
+        </div>
+        <a class="vi-btn" asp-page="/CheckOutPage/index">Proceed To Checkout</a>
+    </div>
+
+</section>
+
+<!-- Cart-items -->

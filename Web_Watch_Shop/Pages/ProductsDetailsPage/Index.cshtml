@@ -1,0 +1,176 @@
+﻿@page
+@model Web_Watch_Shop.Pages.ProductsDetailsPage.IndexModel
+@{
+}
+
+<section>
+
+    <div class="single-p-container bg-light">
+        <!-- bread cumb -->
+
+        <div class="container-fluid my-0">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a asp-page="/Index">Home</a></li>
+                            <li class="breadcrumb-item active">Product</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- bread cumb -->
+        <div class="single-p-row ">
+            <div class="single-img-col">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="@ViewData["ImagePath"]" alt="slide-image-1">
+                        </div>
+                        @* <div class="swiper-slide">
+                        <img src="~/images/product-images/popular2.jpg" alt="slide-image-2">
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="~/images/product-images/popular3.png" alt="slide-image-3">
+                        </div> *@
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="single-p-about">
+                <h5>@ViewData["Description"]</h5>
+                <p>
+                    <span>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        12 Ratings
+                    </span>
+                </p>
+                @* <p>
+                Brand: Tommy Hilfiger
+                </p> *@
+                <hr>
+                <div class="price-col">
+                    <h6>@ViewData["Price"]</h6>
+                    <div class="buy-btns">
+                        <a href="checkout.html" class="buy-btn">Buy Now</a>
+                        <a class="add-btn" href="cart.html">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-p-deli">
+                <p>Delivery options</p>
+                <p>
+                    <span>Cash On Delivery</span>
+                    <span>$ 100</span>
+                </p>
+                <p>
+                    <span>Online Payment</span>
+                    <span>$ 50</span>
+                </p>
+                <p>
+                    <span>Personal Pickup</span>
+                    <span>Free</span>
+                </p>
+
+                <hr>
+                <p>return&Warranty</p>
+                <p>
+                    <span>
+                        <i class="fa fa-check"></i>
+                        100% Authentic
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <i class="fa fa-check"></i>
+                        14 days easy return <br>
+                        <span>Change of mind is not applicable</span>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <i class="fa fa-shield"></i>
+                        2 Years International Warranty
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- you may also like -->
+
+
+<section class="text-center pb-5">
+    <h2 class="h22 ">You May Also Like</h2>
+    <div class="wrappers image-filter mobile">
+
+        <div class="cardd">
+            <a href="product.html">
+                <img src="~/images/product-images/popular5.png" alt="Luxury Brand Watch">
+                <p>
+                    Luxury Brand Men Watch Good Quality Black
+                    <br> <span class="text-danger">Rs 300</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd">
+            <a href="product.html">
+                <img src="~/images/product-images/popular6.png" alt="NAVIFORCE ArmyZinger">
+                <p>
+                    NAVIFORCE Army Business Band Japan Watch
+                    <br> <span class="text-danger">Rs 250</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd">
+            <a href="~.html">
+                <img src="~/images/product-images/women1.png" alt="Blue Leather Skeleton Watch for Women.">
+                <p>
+                    Blue Leather Watch for Women.
+                    <br> <span class="text-danger">Rs 350</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd">
+            <a href="product.html">
+                <img src="~/images/product-images/women2.png" alt="New Fashion Mobile Watch For Girls">
+                <p>
+                    New Pink lether Fashion Mobile Watch For Girls
+                    <br> <span class="text-danger">Rs 250</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+    </div>
+    <a asp-page="/Shop/Index" class="vi-btn">VIEW ALL</a>
+</section>
+
+
+
+<!-- you may also like -->

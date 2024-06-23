@@ -1,0 +1,36 @@
+﻿@page
+@model Web_Watch_Shop.Pages.CartDetails.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cart_Detail[0].Cart)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cart_Detail) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cart.CartID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Cart_DetailID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Cart_DetailID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Cart_DetailID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

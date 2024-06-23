@@ -1,0 +1,330 @@
+﻿@page
+@using System.Web
+@* @model Watch_Store.Pages.Shop.IndexModel *@
+@model Web_Watch_Shop.Pages.Shop.IndexModel
+@{
+    ViewData["Title"] = "Shop";
+}
+<!--Products  -->
+<section class="bg-light text-center pb-5">
+
+    <!-- bread cumb -->
+    
+    <nav class="m-2" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">shop</li>
+        </ol>
+    </nav>
+
+    <!-- bread cumb -->
+    <div class="banner banner5">
+        <h4 class="c2">Categories</h4>
+        <ul>
+            <li>
+                <button class="buttons active btn btn-outline-primary" data-filter="all">All</button>
+                <button class="buttons btn btn-outline-primary" data-filter="men">Mens-Watches</button>
+                <button class="buttons btn btn-outline-primary" data-filter="ladies">Ladies-Watches</button>
+                <button class="buttons btn  btn-outline-primary" data-filter="mobile">Mobile Watches</button>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="wrappers">
+        @foreach (var item in Model.Product_Detail)
+        {
+            @if (item.CategoryName.Length == 12)
+            {
+                <div class="cardd image-filter men">
+                    <a href="/ProductsDetailsPage/index?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.ProductDescription)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
+                        <img src="@item.ImagePath" alt="Stainless Steel Strap Quartz Wristwatch Men">
+                        <p>
+                            @item.ProductName
+                            <br> <span class="text-danger">$ @item.Price</span>
+                        </p>
+                    </a><br>
+                    <i class="fa fa-heart-o"></i>
+                    <a href="/CartPage?image=@Url.Content(item.ImagePath)&Price=@HttpUtility.UrlEncode(item.Price.ToString())" class="btn2 ">ADD TO CART</a>
+                </div>
+            }
+            else
+            {
+                @if (item.CategoryName.StartsWith("L"))
+                {
+                    <div class="cardd image-filter ladies">
+                        <a href="/ProductDetailsPage?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.ProductDescription)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
+                            <img src="@item.ImagePath" alt="Stainless Steel Strap Quartz Wristwatch Men">
+                            <p>
+                                @item.ProductName
+                                <br> <span class="text-danger">$ @item.Price</span>
+                            </p>
+                        </a><br>
+                        <i class="fa fa-heart-o"></i>
+                        <a href="/Cart?image=@Url.Content(item.ImagePath)&Price=@HttpUtility.UrlEncode(item.Price.ToString())" class="btn2 ">ADD TO CART</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="cardd image-filter mobile">
+                        <a href="/ProductDetailsPage?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.ProductDescription)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
+                            <img src="@item.ImagePath" alt="Stainless Steel Strap Quartz Wristwatch Men">
+                            <p>
+                                @item.ProductName
+                                <br> <span class="text-danger">$ @item.Price</span>
+                            </p>
+                        </a><br>
+                        <i class="fa fa-heart-o"></i>
+                        <a href="/Cart?image=@Url.Content(item.ImagePath)&Price=@HttpUtility.UrlEncode(item.Price.ToString())" class="btn2 ">ADD TO CART</a>
+                    </div>
+                }
+            }
+        }
+        @* <div class="cardd image-filter men">
+            <a href="/Product?imagePath=@Url.Content("~/images/product-images/popular1.jpg")&description=@HttpUtility.UrlEncode("Countdown Stainless Steel Strap Quartz Wristwatch Men")&price=@HttpUtility.UrlEncode("$ 1,250")">
+                <img src="~/images/product-images/popular1.jpg" alt="Stainless Steel Strap Quartz Wristwatch Men">
+                <p>
+                    Countdown Stainless Steel Strap Quartz Wristwatch Men
+                    <br> <span class="text-danger">$ 1,250</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="/Cart?image=@Url.Content("~/images/product-images/popular1.jpg")&Price=@HttpUtility.UrlEncode("$ 1,250")" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter ladies">
+            <a href="/Product?imagePath=@Url.Content("~/images/product-images/girl2.jpg")&description=@HttpUtility.UrlEncode("Deemiz New Stylish Watch for Women in High Quality")&price=@HttpUtility.UrlEncode("$ 250")">
+                <img src="~/images/product-images/girl2.jpg " alt="Deemiz New in High Quality">
+                <p>
+                    Deemiz New Stylish Watch for Women in High Quality
+                    <br> <span class="text-danger ">$ 250</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter men">
+            <a href="/Product?imagePath=@Url.Content("~/images/product-images/popular4.png")&description=@HttpUtility.UrlEncode("Romanson Stainless Steel Wrist Watch For Men-Romanson")&price=@HttpUtility.UrlEncode("$ 1,250")">
+                <img src="~/images/product-images/popular4.png" alt="Romanson Stainless Steel Wrist Watch">
+                <p>
+                    Romanson Stainless Steel Wrist Watch For Men-Romanson
+                    <br><span class="text-danger">$ 1,250</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter men">
+            <a href="/Product?imagePath=@Url.Content("~/images/product-images/popular2.jpg")&description=@HttpUtility.UrlEncode("Browwn Leather Skeleton Watch for Men.")&price=@HttpUtility.UrlEncode("$ 450")">
+                <img src="~/images/product-images/popular2.jpg" alt="Browwn Leather Skeleton Watch for Men.">
+                <p>
+                    Browwn Leather Skeleton Watch for Men.
+                    <br> <span class="text-danger">$ 450</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter ladies">
+            <a href="/Product?imagePath=@Url.Content("~/images/product-images/women2.png")&description=@HttpUtility.UrlEncode("New Pink lether Fashion Mobile Watch For Girls")&price=@HttpUtility.UrlEncode("$ 1,450")">
+                <img src="~/images/product-images/women2.png" alt="New Fashion Mobile Watch For Girls">
+                <p>
+                    New Pink lether Fashion Mobile Watch For Girls
+                    <br> <span class="text-danger">$ 1,450</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter men">
+            <a href="/Product?imagePath=@Url.Content("~/images/product-images/popular3.png")&description=@HttpUtility.UrlEncode("Timex Allied Blue Analog Watch for Men")&price=@HttpUtility.UrlEncode("$ 850")">
+                <img src="~/images/product-images/popular3.png" alt="Timex Allied Blue Dial Analog">
+                <p>
+                    Timex Allied Blue Analog Watch for Men
+                    <br> <span class="text-danger">$ 850</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter ladies">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/women1.png")&description=@HttpUtility.UrlEncode("Blue Leather Watch for Women.")&price=@HttpUtility.UrlEncode("$ 350")">
+                <img src="~/images/product-images/women1.png" alt="Blue Leather Skeleton Watch for Women.">
+                <p>
+                    Blue Leather Watch for Women.
+                    <br> <span class="text-danger">$ 350</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter ladies">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/girl.1.jpg")&description=@HttpUtility.UrlEncode("Watchify Fashion Magnetic Wrist Watch for Girls")&price=@HttpUtility.UrlEncode("$ 400")">
+                <img src="~/images/product-images/girl.1.jpg" alt="Watchify Fashion Magnetic Wrist Watch for Girls">
+                <p>
+                    Watchify Fashion Magnetic Wrist Watch for Girls
+                    <br> <span class="text-danger">$ 400</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter men">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images//popular5.png")&description=@HttpUtility.UrlEncode("Luxury Brand Men Watch Good Quality Black")&price=@HttpUtility.UrlEncode("$ 300")">
+                <img src="~/images/product-images/popular5.png" alt="Luxury Brand Watch">
+                <p>
+                    Luxury Brand Men Watch Good Quality Black
+                    <br> <span class="text-danger">$ 300</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter men">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/popular6.png")&description=@HttpUtility.UrlEncode("NAVIFORCE Army Business Band Japan Watch")&price=@HttpUtility.UrlEncode("$ 250")">
+                <img src="~/images/product-images/popular6.png" alt="NAVIFORCE Army">
+                <p>
+                    NAVIFORCE Army Business Band Japan Watch
+                    <br> <span class="text-danger">$ 250</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o"></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter mobile">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/mobile4.png")&description=@HttpUtility.UrlEncode("Smart Watch With Bluetooth Call Intelligence Smart Watch.")&price=@HttpUtility.UrlEncode("$ 900")">
+                <img src="~/images/product-images/mobile4.png" alt="Smart Watch With Bluetooth Call">
+                <p>
+                    Smart Watch With Bluetooth Call Intelligence Smart Watch.
+                    <br> <span class=" text-danger ">$ 900</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter mobile">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/mobile3.png")&description=@HttpUtility.UrlEncode("Smart Watch Men Blood Pressure Waterproof Smartwatch")&price=@HttpUtility.UrlEncode("$ 1,100")">
+                <img src="~/images/product-images/mobile3.png " alt="Waterproof Smartwatch ">
+                <p>
+                    Smart Watch Men Blood Pressure Waterproof Smartwatch
+                    <br> <span class="text-danger ">$ 1,100</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter ladies">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/girl3.jpg")&description=@HttpUtility.UrlEncode("[NEW BRAND]High Quality Purple Magnetic Wrist Watch for Ladies")&price=@HttpUtility.UrlEncode("$ 300")">
+                <img src="~/images/product-images/girl3.jpg " alt="High Quality Purple Magnetic Ladies Wrist Watch For Girls Women">
+                <p>
+                    [NEW BRAND]High Quality Purple Magnetic Wrist Watch for Ladies
+                    <br> <span class="text-danger ">$ 300</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter ladies">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/girl4.jpg")&description=@HttpUtility.UrlEncode("Red Leather Double Bracelet Love Watch For Girls")&price=@HttpUtility.UrlEncode("$ 290")">
+                <img src="~/images/product-images/girl4.jpg " alt="Love Watch For Girls">
+                <p>
+                    Red Leather Double Bracelet Love Watch For Girls
+                    <br> <span class="text-danger ">$ 290</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter ladies">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/girl5.jpg")&description=@HttpUtility.UrlEncode("Cute Quartz Bracelet Watch For Girls")&price=@HttpUtility.UrlEncode("$ 360")">
+                <img src="~/images/product-images/girl5.jpg " alt="Bracelet Watch For Girls">
+                <p>
+                    Cute Quartz Bracelet Watch For Girls
+                    <br> <span class="text-danger ">$ 360</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+
+        <div class="cardd image-filter mobile">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/mobile5.png")&description=@HttpUtility.UrlEncode("M3 Plus Smart Fitness Band with Heart Rate Sensor,Smart Watch")&price=@HttpUtility.UrlEncode("$ 550")">
+                <img src="~/images/product-images/mobile5.png " alt="Smart Band, Smart Watch">
+                <p>
+                    M3 Plus Smart Fitness Band with Heart Rate Sensor,Smart Watch
+                    <br> <span class="text-danger ">$ 550</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter mobile">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/mobile6.png")&description=@HttpUtility.UrlEncode("Watch Wearable Device Sports Watch with GSM slot with camera")&price=@HttpUtility.UrlEncode("$ 1,850")">
+                <img src="~/images/product-images/mobile6.png " alt="Watch with GSM slot with camera">
+                <p>
+                    Watch Wearable Device Sports Watch with GSM slot with camera
+                    <br> <span class="text-danger ">$ 1,850</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter mobile">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/mobile7.png")&description=@HttpUtility.UrlEncode("High quality stylish waterproof smart watch for android and ios")&price=@HttpUtility.UrlEncode("$ 1,050")">
+                <img src="~/images/product-images/mobile7.png " alt="waterproof smart watch for android and ios">
+                <p>
+                    High quality stylish waterproof smart watch for android and ios
+                    <br> <span class="text-danger ">$ 1,050</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter mobile">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/mobile8.png")&description=@HttpUtility.UrlEncode("Fitness Tracker Heart Rate Monitor Smart Band watch")&price=@HttpUtility.UrlEncode("$ 600")">
+                <img src="~/images/product-images/mobile8.png " alt="Fitness Tracker Heart Rate Monitor Smart Band">
+                <p>
+                    Fitness Tracker Heart Rate Monitor Smart Band watch
+                    <br> <span class="text-danger ">$ 600</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+
+        <div class="cardd image-filter mobile">
+            <a href="/product?imagePath=@Url.Content("~/images/product-images/mobile9.png")&description=@HttpUtility.UrlEncode("Smart Watch for iOS Android AIVEILE 2020 Version Activity.")&price=@HttpUtility.UrlEncode("$ 600")">
+                <img src="~/images/product-images/mobile9.png " alt="iOS Android AIVEILE 2020 Version Activity.">
+                <p>
+                    Smart Watch for iOS Android AIVEILE 2020 Version Activity.
+                    <br> <span class="text-danger ">$ 600</span>
+                </p>
+            </a><br>
+            <i class="fa fa-heart-o "></i>
+            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+        </div>
+ *@
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="~/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--Products  -->

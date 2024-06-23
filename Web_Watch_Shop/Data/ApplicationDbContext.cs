@@ -9,5 +9,8 @@ namespace Web_Watch_Shop.Data
             : base(options)
         {
         }
+        public DbSet<Web_Watch_Shop.Models.Product_Detail> Product_Detail { get; set; } = default!;
+        public DbSet<Web_Watch_Shop.Models.Cart_Detail> Cart_Detail { get; set; } = default!;
+
     }
 }
