@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{searchString?}"
 @model Web_Watch_Shop.Pages.Product_Details.IndexModel
 
 @{
@@ -13,8 +13,18 @@
     </div>
     <br>
 <p>
+        Category name:
+        <select asp-for="ProductCategory" asp-items="Model.Categories">
+        <option value="">All</option>
+    </select>
     <a class="btn btn-primary text-white" asp-page="Create">Create New</a>
 </p>
+    <form>
+        <p>
+            Name: <input type="text" asp-for="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
 <table class="table">
     <thead>
         <tr>
@@ -52,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.ProductDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.Price)$
             </td>
             <td>
                         <a class="btn btn-primary text-white" asp-page="./Edit" asp-route-id="@item.Product_DetailID">Edit</a> |
