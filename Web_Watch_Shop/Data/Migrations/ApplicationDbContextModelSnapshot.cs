@@ -66,13 +66,13 @@ namespace Web_Watch_Shop.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "106c1f64-fc71-49c6-a629-9826e0e4dae5",
+                            Id = "71ca8ca8-4ba1-4271-8488-8858c17fa491",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "ce9c049f-33ab-4341-8c41-ac1d3c9532e8",
+                            Id = "01099144-d9ea-4f2b-853e-48e3261d66e0",
                             Name = "customer",
                             NormalizedName = "customer"
                         });

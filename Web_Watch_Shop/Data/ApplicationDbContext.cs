@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Web_Watch_Shop.Models;
 
 namespace Web_Watch_Shop.Data
 {
@@ -22,5 +23,6 @@ namespace Web_Watch_Shop.Data
             customer.NormalizedName = "customer";
             builder.Entity<IdentityRole>().HasData(admin,customer);
         }
+        public DbSet<Web_Watch_Shop.Models.User> User { get; set; } = default!;
     }
 }
