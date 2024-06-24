@@ -1,7 +1,8 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,8 +12,10 @@ using Web_Watch_Shop.Models;
 
 namespace Web_Watch_Shop.Pages.Product_Details
 {
+    [Authorize(Roles = "admin")]
     public class IndexModel : PageModel
     {
+
         private readonly Web_Watch_Shop.Data.ApplicationDbContext _context;
 
         public IndexModel(Web_Watch_Shop.Data.ApplicationDbContext context)
