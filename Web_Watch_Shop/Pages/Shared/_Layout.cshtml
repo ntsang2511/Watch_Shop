@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -54,17 +58,28 @@
                 <li>
                     <a asp-page="/About/Index">About</a>
                 </li>
-                <li>
-                    <a asp-page="/Product_Details/Index">Admin</a>
-                </li>
+                <li><a asp-page="/Product_Details/Index">Admin</a></li>
             </div>
             <input type="checkbox" id="more" class="hidden">
             <label for="more" class="more">
                 <p class="text-white">More <i class="fa fa-angle-down mt-3 display-4"></i></p>
             </label>
             <div class="icon2">
-                <a asp-page="/Login/Index">Login<i class="fa fa-user-o"></i></a>
-@*              <partial name="_LoginPartial" /> *@
+                <li class="nav-item dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        Account
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-dark" asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
+                    </ul>
+                </li>
                 <a asp-page="/CartPage/Index">
                     My-Cart
                     <i class="fa fa-shopping-cart"></i>
