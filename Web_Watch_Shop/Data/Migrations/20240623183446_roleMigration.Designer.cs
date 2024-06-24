@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web_Watch_Shop.Data;
 
@@ -11,9 +12,11 @@ using Web_Watch_Shop.Data;
 namespace Web_Watch_Shop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240623183446_roleMigration")]
+    partial class roleMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,13 +69,13 @@ namespace Web_Watch_Shop.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "106c1f64-fc71-49c6-a629-9826e0e4dae5",
+                            Id = "b6158790-66f0-4955-a7cc-6aa4b0b3e073",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "ce9c049f-33ab-4341-8c41-ac1d3c9532e8",
+                            Id = "b6f01910-74be-45c1-bc02-b4a84962903c",
                             Name = "customer",
                             NormalizedName = "customer"
                         });
