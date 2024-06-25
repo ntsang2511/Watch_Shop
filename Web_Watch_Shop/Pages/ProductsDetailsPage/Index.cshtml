@@ -60,8 +60,8 @@
                 <div class="price-col">
                     <h6>@ViewData["Price"]</h6>
                     <div class="buy-btns">
-                        <a href="checkout.html" class="buy-btn">Buy Now</a>
-                        <a class="add-btn" href="cart.html">Add To Cart</a>
+                        <a asp-page="/CheckOutPage/index" class="buy-btn">Buy Now</a>
+                        <a class="add-btn" asp-page="/Cartpage/index">Add To Cart</a>
                     </div>
                 </div>
             </div>

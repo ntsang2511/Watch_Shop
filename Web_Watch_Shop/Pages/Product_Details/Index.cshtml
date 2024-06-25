@@ -13,29 +13,38 @@
     </div>
     <br>
 <p>
-        Category name:
+        @* Category name:
         <select asp-for="ProductCategory" asp-items="Model.Categories">
         <option value="">All</option>
-    </select>
+    </select> *@
     <a class="btn btn-primary text-white" asp-page="Create">Create New</a>
 </p>
     <form>
         <p>
-            Name: <input type="text" asp-for="SearchString" />
-            <input type="submit" class="btn btn-primary text-white" value="Search" />
+            Name:  <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" class="btn btn-primary text-white" value="Search" />|
+            <a class="btn btn-primary asp-page="./Index">Back to full List</a>
         </p>
     </form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Product_Detail[0].ProductName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                    asp-route-currentFilter="@Model.CurrentFilter">
+                     @Html.DisplayNameFor(model => model.Product_Detail[0].ProductName)
+                </a>
+               @*  @Html.DisplayNameFor(model => model.Product_Detail[0].ProductName) *@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Product_Detail[0].ImagePath)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Product_Detail[0].CategoryName)
+                    <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                       asp-route-currentFilter="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Product_Detail[0].CategoryName)
+                    </a>
+               @*  @Html.DisplayNameFor(model => model.Product_Detail[0].CategoryName) *@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Product_Detail[0].ProductDescription)
@@ -47,7 +56,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Product_Detail) {
+@foreach (var item in Model.Product_Detailss) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
@@ -73,3 +82,22 @@
 }
     </tbody>
 </table>
+    @{
+        var prevDisabled = !Model.Product_Detailss.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.Product_Detailss.HasNextPage ? "disabled" : "";
+    }
+
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.CurrentSort"
+       asp-route-pageIndex="@(Model.Product_Detailss.PageIndex - 1)"
+       asp-route-currentFilter="@Model.CurrentFilter"
+       class="btn btn-primary @prevDisabled">
+        Previous
+    </a>
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.CurrentSort"
+       asp-route-pageIndex="@(Model.Product_Detailss.PageIndex + 1)"
+       asp-route-currentFilter="@Model.CurrentFilter"
+       class="btn btn-primary @nextDisabled">
+        Next
+    </a>

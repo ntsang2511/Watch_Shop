@@ -48,17 +48,17 @@
                 </div>
                 <div class="product-quntity">
                     <li>Silver</li>
-                    <li>$ 1,250</li>
+                    <li>$ @ViewData["Price"]</li>
                     <li>
                         <button class="pp">-</button>
                         <input type="number" value="1" />
                         <button class="pm">+</button>
                     </li>
-                    <li>@ViewData["Price"]</li>
+                    <li>$ </li>
                 </div>
             </div>
         </div>
-
+@* 
         <div class="cart-row">
             <div class="cart-names">
                 <div class="product-heading">
@@ -87,9 +87,9 @@
                 </div>
             </div>
         </div>
+       
+    </div> *@
         <a class="vi-btn" asp-page="/CheckOutPage/index">Proceed To Checkout</a>
-    </div>
-
 </section>
 
 <!-- Cart-items -->
