@@ -52,7 +52,7 @@
                 @if (item.CategoryName.StartsWith("L"))
                 {
                     <div class="cardd image-filter ladies">
-                        <a href="/ProductDetailsPage?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.ProductDescription)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
+                        <a href="/ProductsDetailsPage?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.ProductDescription)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
                             <img src="@item.ImagePath" alt="Stainless Steel Strap Quartz Wristwatch Men">
                             <p>
                                 @item.ProductName
@@ -60,13 +60,13 @@
                             </p>
                         </a><br>
                         <i class="fa fa-heart-o"></i>
-                        <a href="/Cart?image=@Url.Content(item.ImagePath)&Price=@HttpUtility.UrlEncode(item.Price.ToString())" class="btn2 ">ADD TO CART</a>
+                        <a href="/CartPage?image=@Url.Content(item.ImagePath)&Price=@HttpUtility.UrlEncode(item.Price.ToString())" class="btn2 ">ADD TO CART</a>
                     </div>
                 }
                 else
                 {
                     <div class="cardd image-filter mobile">
-                        <a href="/ProductDetailsPage?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.ProductDescription)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
+                        <a href="/ProductsDetailsPage?imagePath=@Url.Content(item.ImagePath)&description=@HttpUtility.UrlEncode(item.ProductDescription)&price=@HttpUtility.UrlEncode(item.Price.ToString())">
                             <img src="@item.ImagePath" alt="Stainless Steel Strap Quartz Wristwatch Men">
                             <p>
                                 @item.ProductName
@@ -74,7 +74,7 @@
                             </p>
                         </a><br>
                         <i class="fa fa-heart-o"></i>
-                        <a href="/Cart?image=@Url.Content(item.ImagePath)&Price=@HttpUtility.UrlEncode(item.Price.ToString())" class="btn2 ">ADD TO CART</a>
+                        <a href="/CartPage?image=@Url.Content(item.ImagePath)&Price=@HttpUtility.UrlEncode(item.Price.ToString())" class="btn2 ">ADD TO CART</a>
                     </div>
                 }
             }

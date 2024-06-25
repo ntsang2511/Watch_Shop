@@ -1,4 +1,5 @@
 ﻿@page
+@using System.Web
 @model Web_Watch_Shop.Pages.ProductsDetailsPage.IndexModel
 @{
 }
@@ -61,7 +62,7 @@
                     <h6>@ViewData["Price"]</h6>
                     <div class="buy-btns">
                         <a asp-page="/CheckOutPage/index" class="buy-btn">Buy Now</a>
-                        <a class="add-btn" asp-page="/Cartpage/index">Add To Cart</a>
+                        @* <a class="add-btn" asp-page="/Cartpage/index">Add To Cart</a> *@
                     </div>
                 </div>
             </div>
@@ -120,51 +121,63 @@
     <div class="wrappers image-filter mobile">
 
         <div class="cardd">
-            <a href="product.html">
+            <a href="/ProductsDetailsPage?imagePath=@Url.Content("~/images/product-images/popular5.png")
+            &description=@HttpUtility.UrlEncode("Luxury Brand Men Watch Good Quality Black")
+            &price=@HttpUtility.UrlEncode("$ 300")">
                 <img src="~/images/product-images/popular5.png" alt="Luxury Brand Watch">
                 <p>
                     Luxury Brand Men Watch Good Quality Black
-                    <br> <span class="text-danger">Rs 300</span>
+                    <br> <span class="text-danger">$ 300</span>
                 </p>
             </a><br>
             <i class="fa fa-heart-o"></i>
-            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+            <a href="/CartPage?image=@Url.Content("~/images/product-images/popular5.png")
+                &Price=@HttpUtility.UrlEncode("300")" class="btn2 ">ADD TO CART</a>
         </div>
 
         <div class="cardd">
-            <a href="product.html">
+            <a href="/ProductsDetailsPage?imagePath=@Url.Content("~/images/product-images/popular6.png")
+            &description=@HttpUtility.UrlEncode(" NAVIFORCE Army Business Band Japan Watch")
+            &price=@HttpUtility.UrlEncode("$ 250")">
                 <img src="~/images/product-images/popular6.png" alt="NAVIFORCE ArmyZinger">
                 <p>
                     NAVIFORCE Army Business Band Japan Watch
-                    <br> <span class="text-danger">Rs 250</span>
+                    <br> <span class="text-danger">$ 250</span>
                 </p>
             </a><br>
             <i class="fa fa-heart-o"></i>
-            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+            <a href="/CartPage?image=@Url.Content("~/images/product-images/popular6.png")
+                &Price=@HttpUtility.UrlEncode("250")" class="btn2 ">ADD TO CART</a>
         </div>
 
         <div class="cardd">
-            <a href="~.html">
+            <a href="/ProductsDetailsPage?imagePath=@Url.Content("~/images/product-images/women1.png")
+            &description=@HttpUtility.UrlEncode(" Blue Leather Watch for Women.")
+            &price=@HttpUtility.UrlEncode("$ 350")">
                 <img src="~/images/product-images/women1.png" alt="Blue Leather Skeleton Watch for Women.">
                 <p>
                     Blue Leather Watch for Women.
-                    <br> <span class="text-danger">Rs 350</span>
+                    <br> <span class="text-danger">$ 350</span>
                 </p>
             </a><br>
             <i class="fa fa-heart-o"></i>
-            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+            <a href="/CartPage?image=@Url.Content("~/images/product-images/women1.png")
+                &Price=@HttpUtility.UrlEncode("350")" class="btn2 ">ADD TO CART</a>
         </div>
 
         <div class="cardd">
-            <a href="product.html">
+            <a href="/ProductsDetailsPage?imagePath=@Url.Content("~/images/product-images/women2.png")
+            &description=@HttpUtility.UrlEncode("New Pink lether Fashion Mobile Watch For Girls")
+            &price=@HttpUtility.UrlEncode("$ 250")">
                 <img src="~/images/product-images/women2.png" alt="New Fashion Mobile Watch For Girls">
                 <p>
                     New Pink lether Fashion Mobile Watch For Girls
-                    <br> <span class="text-danger">Rs 250</span>
+                    <br> <span class="text-danger">$ 250</span>
                 </p>
             </a><br>
             <i class="fa fa-heart-o"></i>
-            <a href="cart.html" class="btn2 ">ADD TO CART</a>
+            <a href="/CartPage?image=@Url.Content("~/images/product-images/women2.png")
+                &Price=@HttpUtility.UrlEncode("250")" class="btn2 ">ADD TO CART</a>
         </div>
 
     </div>

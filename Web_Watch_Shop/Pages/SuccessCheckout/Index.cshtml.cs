@@ -7,6 +7,7 @@ namespace Web_Watch_Shop.Pages.SuccessCheckout
     {
         public void OnGet()
         {
+            TempData.Keep();
         }
     }
 }

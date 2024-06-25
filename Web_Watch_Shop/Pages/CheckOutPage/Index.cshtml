@@ -13,32 +13,28 @@
 </section>
 <!-- BANNER -->
 
-<div class="go-back"><a class="btn btn-primary text-white" asp-page="/CartPage/Index">Go-Back</a></div>  @* <i class="fa fa-angle-left"></i> *@
+<div class="go-back"><a class="btn btn-primary text-white" asp-page="/Shop/Index">Go-Back</a></div>  @* <i class="fa fa-angle-left"></i> *@
 
 <div class="container p-3 ">
-    <form action="" class="bg-light row m-0 pb-3 ">
+    <form method="post" class="bg-light row m-0 pb-3 ">
 
-        <div class="form-group col-md-6">
-            <label for="firstname">First Name*</label>
-            <input type="text1" placeholder="Ex:Trần Trung" required class="form-control">
+        <div class="form-group col-md-12">
+            <label for="name">Name*</label>
+            <input type="text1" placeholder="Ex:Trần Trung Hậu" required class="form-control" asp-for="Name">
         </div>
-        <div class="form-group col-md-6">
-            <label for="last-name">Last Name*</label>
-            <input type="text2" placeholder="Ex:Hậu" class="form-control">
-        </div>
+        
         <div class="form-group col-md-12">
             <label for="">Email address:</label>
-            <input type="email" placeholder="Ex:hautt21@gmail.com" required class="form-control">
+            <input type="email" placeholder="Ex:hautt21@gmail.com" required class="form-control" asp-for="Email">
 
         </div>
         <div class="form-group col-md-12">
             <label for="address">Address:</label>
-            <textarea class="form-control" placeholder="Ex:123-Bình Thạnh-HCM
-" required rows="3"></textarea>
+            <textarea class="form-control" placeholder="Ex:123-Bình Thạnh-HCM" required rows="3" asp-for="Address"></textarea>
         </div>
         <div class="form-group col-md-12">
             <label>Province:</label>
-            <select class="form-control" required id="exampleFormControlSelect1">
+            <select class="form-control" required id="exampleFormControlSelect1" asp-for="Provice">
                 <option disabled selected hidden>select</option>
                 <option>Hồ Chí Minh</option>
                 <option>Hà Nội</option>
@@ -51,28 +47,26 @@
         </div>
         <div class="form-group col-md-12">
             <label for="zipcode">Zipcode:</label>
-            <input type="text" placeholder="Ex:10000" required class="form-control">
+            <input type="text" placeholder="Ex:10000" required class="form-control" asp-for="ZipCode">
         </div>
         <div class="form-group col-md-12">
             <label for="PhoneNo">Phone No:</label>
-            <input type="number" placeholder="Ex:0134567xxx" required class="form-control">
+            <input type="number" placeholder="Ex:0134567xxx" required class="form-control" asp-for="Phone">
         </div>
         <div class="form-group col-md-12">
-            <label for="" id="Delivery">Choose Delivery Method:</label>
-        </div>
-
-        <div class="form-check col-md-12">
-            <input type="radio" required name="exampleRadios" value="COD">
-            <label for="Delivery">Cash on Delivery</label>
+            <label>Choose Delivery Method:</label>
         </div>
         <div class="form-check col-md-12">
-            <input type="radio" required name="exampleRadios" value="next-day">
-            <label for="Delivery">Next Day Delivery</label>
+            <input type="radio" class="form-check-input" asp-for="Delivery" value="COD" id="cod">
+            <label class="form-check-label" for="cod">Cash on Delivery</label>
         </div>
-
         <div class="form-check col-md-12">
-            <input class="" type="radio" required name="exampleRadios" value="Free">
-            <label class="" for="Delivery">Personal Pickup (Free)</label>
+            <input type="radio" class="form-check-input" asp-for="Delivery" value="next-day" id="nextDay">
+            <label class="form-check-label" for="nextDay">Next Day Delivery</label>
+        </div>
+        <div class="form-check col-md-12">
+            <input type="radio" class="form-check-input" asp-for="Delivery" value="Free" id="pickup">
+            <label class="form-check-label" for="pickup">Personal Pickup (Free)</label>
         </div>
 
 
@@ -85,8 +79,8 @@
             </div>
         </div>
         <div class="col-md-12 text-center mt-5">
-            <a asp-page="/SuccessCheckout/Index" type="submit" value="sumbit" class="btn btn-primary w-100">Place Order</a>
-            @* <button type="submit" value="sumbit" class="btn btn-primary w-100">Place Order</button> *@
+           @*  <a asp-page="/SuccessCheckout/Index" type="submit" value="sumbit" class="btn btn-primary w-100">Place Order</a> *@
+            <button type="submit" class="btn btn-primary w-100">Place Order</button>
         </div>
 
     </form>

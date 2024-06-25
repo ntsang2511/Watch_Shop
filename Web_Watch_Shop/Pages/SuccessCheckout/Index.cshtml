@@ -3,11 +3,30 @@
 @{
 }
 <div>
-	<h1 style="align-items: center; color: green;">Thanh toán thành công</h1>
-	
-	<p>Thanh toán đã thực hiện thành công. Trong vòng 30 phút OneShop sẽ liên hệ xác nhận thông tin giao hàng</p>
+	<h1 style="align-items: center; color: green;">Payment Succesfull</h1>
+
+	<p>Payment has been successfully completed. Within 30 minutes, OneShop will contact you to confirm shipping information.</p>
 	<div>
-		<div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Personal Information</h4>
+					<p><strong>Full Name:</strong> @TempData["Name"]</p>
+					<p><strong>Email:</strong> @TempData["Email"]</p>
+					<p><strong>Phone Number:</strong> @TempData["Phone"]</p>
+				</div>
+				<div class="col-md-6">
+					<h4>Shipping Information</h4>
+					<p><strong>Address:</strong> @TempData["Address"]</p>
+					<p><strong>Province/City:</strong> @TempData["Provice"]</p>
+					<p><strong>Zip Code:</strong> @TempData["ZipCode"]</p>
+					<p><strong>Delivery Method:</strong> @TempData["Delivery"]</p>
+				</div>
+			</div>
+		</div>
+		<a asp-page="/Shop/Index" type="submit" value="submit" style="border: none; background-color: red; padding: 10px; text-decoration: none; color: black;">Continue Shopping</a>
+	</div>
+		@* <div>
 			<h4>Tên khách hàng</h4>
 			<p>Nguyễn Tấn Sang</p>
 		</div>
@@ -26,8 +45,7 @@
 		<div>
 			<h4>Số tiền</h4>
 			<p>20.000.000 VND</p>
-		</div>
-		<a asp-page="/Shop/Index" type="submit" value="sumbit" style="border: none; background-color: red; padding: 10px; text-decoration: none; color: black;">Tiếp tục mua sắm</a>
+		</div> *@
 	</div>
 </div>
 
