@@ -13,13 +13,13 @@
     </div>
     <br>
 <p>
-        @* Category name:
-        <select asp-for="ProductCategory" asp-items="Model.Categories">
-        <option value="">All</option>
-    </select> *@
     <a class="btn btn-primary text-white" asp-page="Create">Create New</a>
 </p>
     <form>
+        Category name:
+        <select asp-for="ProductCategory" asp-items="Model.Categories">
+            <option value="">All</option>
+        </select>
         <p>
             Name:  <input type="text" name="SearchString" value="@Model.CurrentFilter" />
             <input type="submit" class="btn btn-primary text-white" value="Search" />|
@@ -30,11 +30,11 @@
     <thead>
         <tr>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                @* <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
                     asp-route-currentFilter="@Model.CurrentFilter">
                      @Html.DisplayNameFor(model => model.Product_Detail[0].ProductName)
-                </a>
-               @*  @Html.DisplayNameFor(model => model.Product_Detail[0].ProductName) *@
+                </a> *@
+               @Html.DisplayNameFor(model => model.Product_Detail[0].ProductName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Product_Detail[0].ImagePath)
@@ -56,7 +56,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Product_Detailss) {
+@foreach (var item in Model.Product_Detail) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
@@ -82,9 +82,9 @@
 }
     </tbody>
 </table>
-    @{
-        var prevDisabled = !Model.Product_Detailss.HasPreviousPage ? "disabled" : "";
-        var nextDisabled = !Model.Product_Detailss.HasNextPage ? "disabled" : "";
+    @* @{
+        var prevDisabled = !Model.Product_Detail.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.Product_Detail.HasNextPage ? "disabled" : "";
     }
 
     <a asp-page="./Index"
@@ -100,4 +100,4 @@
        asp-route-currentFilter="@Model.CurrentFilter"
        class="btn btn-primary @nextDisabled">
         Next
-    </a>
+    </a> *@
